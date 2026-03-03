@@ -1,0 +1,37 @@
+---
+
+---
+
+<section
+  class="relative overflow-hidden"
+  style="background: var(--color-teal);"
+>
+  {/* Diagonal gradient overlay */}
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style="background: linear-gradient(135deg, rgba(0,0,0,0.12) 0%, transparent 50%, rgba(255,255,255,0.06) 100%);"
+  ></div>
+
+  {/* Noise texture */}
+  <div class="absolute inset-0 pointer-events-none opacity-[0.04]"
+    style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E&quot;); background-repeat: repeat; background-size: 256px 256px;"
+  ></div>
+
+  <div class="section section-inner relative z-10 text-center">
+    <h2
+      class="text-white mb-5 reveal"
+      style="font-size: clamp(42px, 5vw, 56px); font-weight: 800; letter-spacing: 4px; font-family: var(--font-heading);"
+    >
+      C.O.R.E.
+    </h2>
+    <p class="text-white/80 text-lg md:text-xl max-w-[640px] mx-auto mb-8 reveal" style="transition-delay: 0.1s;">
+      New systems fail when behavior doesn't change. CORE makes sure it does.
+    </p>
+    <p
+      class="text-white/60 text-sm font-semibold uppercase tracking-[3px] reveal"
+      style="transition-delay: 0.2s;"
+    >
+      Communicate &bull; Onboard &bull; Reinforce &bull; Evaluate
+    </p>
+  </div>
+</section>

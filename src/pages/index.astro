@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ClientLogoBar from '../components/ClientLogoBar.astro';
+import StatsBar from '../components/StatsBar.astro';
+import PainSection from '../components/PainSection.astro';
+import Pillars from '../components/Pillars.astro';
+import Testimonials from '../components/Testimonials.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CoreBanner from '../components/CoreBanner.astro';
+import WhoItsFor from '../components/WhoItsFor.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+---
+
+<Layout>
+  <Hero
+    eyebrow="Business Modernization"
+    headlineParts={[
+      "Your business doesn't have",
+      "a people problem. It has a",
+      `<span class="teal-underline" style="color: var(--color-teal);">systems problem.</span>`,
+    ]}
+    subheadline="We modernize how your company operates—redesigning workflows, aligning systems, and integrating AI—so you can scale without the chaos."
+    primaryCta={{ label: "Book a Free Strategy Call →", href: "/contact" }}
+    secondaryCta={{ label: "See Our Results", href: "/results" }}
+    showVideo={true}
+    isHomepage={true}
+  />
+
+  <ClientLogoBar />
+  <StatsBar />
+  <PainSection />
+  <Pillars />
+  <Testimonials />
+  <ProcessSteps />
+  <CoreBanner />
+  <WhoItsFor />
+  <FinalCTA />
+</Layout>

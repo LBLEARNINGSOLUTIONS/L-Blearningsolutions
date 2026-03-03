@@ -1,0 +1,275 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+
+const steps = [
+  {
+    num: "01",
+    title: "Operational Audit",
+    desc: "We spend time inside your business—not just interviewing leadership, but observing how work actually flows. We identify where time, money, and clarity are being lost. You receive a detailed audit report showing exactly where the friction lives.",
+  },
+  {
+    num: "02",
+    title: "Role Architecture",
+    desc: "We define who owns what across your organization. Every role gets clear responsibilities, decision rights, and handoff points. No more \"I thought someone else was handling that.\"",
+  },
+  {
+    num: "03",
+    title: "Workflow Blueprint",
+    desc: "We design the future-state operation—how work should move through your company for maximum clarity, speed, and accountability. This becomes the blueprint your team builds toward.",
+  },
+  {
+    num: "04",
+    title: "Bottleneck Removal",
+    desc: "We eliminate redundancies, unnecessary approvals, and friction points that slow your team down. If a step doesn't add value, it goes.",
+  },
+  {
+    num: "05",
+    title: "Systems Alignment",
+    desc: "We audit your tech stack and align your platforms with how your business actually needs to operate. Most companies use a fraction of what they're paying for—or they're paying for tools that overlap.",
+  },
+  {
+    num: "06",
+    title: "Technology Integration",
+    desc: "We identify where AI and automation create real operational leverage—not as experiments, but as embedded tools that save hours and sharpen output. Then we integrate them into your actual workflows. For clients who want ongoing support, we manage your AI systems for you — building agents, automating tasks, and optimizing over time so your team gets the output without needing to become AI experts.",
+  },
+  {
+    num: "07",
+    title: "Team Training",
+    desc: "We build structured onboarding into every new system, tool, and process. Your team doesn't just hear about the changes—they learn to operate inside them with confidence.",
+  },
+  {
+    num: "08",
+    title: "Adoption Reinforcement",
+    desc: "Changes fail when accountability disappears. We embed check-ins, feedback loops, and reinforcement systems that make sure new behaviors stick long after we leave.",
+  },
+  {
+    num: "09",
+    title: "Performance Measurement",
+    desc: "We install scorecards and metrics that track what actually matters to your business. You'll see exactly what's working, what needs adjustment, and where to focus next.",
+  },
+];
+
+const coreBlocks = [
+  {
+    letter: "C",
+    title: "Communicate",
+    desc: "We communicate every change before it happens. Your team understands the why before they see the what.",
+  },
+  {
+    letter: "O",
+    title: "Onboard",
+    desc: "We onboard teams into new systems with structured training—not a PDF and a prayer.",
+  },
+  {
+    letter: "R",
+    title: "Reinforce",
+    desc: "We reinforce through accountability loops, check-ins, and feedback systems that keep momentum alive.",
+  },
+  {
+    letter: "E",
+    title: "Evaluate",
+    desc: "We evaluate with scorecards and metrics that track what matters, so you can see the ROI in real time.",
+  },
+];
+
+const timeline = [
+  { phase: "Discovery", weeks: "Weeks 1–2", desc: "Operational audit, stakeholder interviews, workflow mapping" },
+  { phase: "Design", weeks: "Weeks 3–6", desc: "Role architecture, workflow blueprints, systems recommendations" },
+  { phase: "Build", weeks: "Weeks 7–10", desc: "Implementation, integration, team training" },
+  { phase: "Sustain", weeks: "Ongoing", desc: "Reinforcement, measurement, optimization" },
+];
+---
+
+<Layout
+  title="How We Work | L&B Learning Solutions"
+  description="Our 9-step modernization process redesigns how your business operates—from audit to implementation to measurement. See exactly what an engagement looks like."
+>
+  {/* Hero */}
+  <section class="bg-white">
+    <div class="section section-inner py-20 md:py-28 lg:py-32">
+      <div class="max-w-[800px]">
+        <p class="eyebrow mb-6 hero-eyebrow">
+          <span class="accent-dot">Our Process</span>
+        </p>
+        <h1
+          class="mb-6 hero-headline-line"
+          style="font-size: clamp(36px, 4.5vw, 56px); font-weight: 700; line-height: 1.1;"
+        >
+          <span>A Proven System. Not a Generic Playbook.</span>
+        </h1>
+        <p class="hero-sub text-lg md:text-xl max-w-[640px]" style="color: var(--color-text-light); line-height: 1.7;">
+          Every engagement runs through our 9-step modernization process—designed to move your business from where it is to where it needs to be, without disrupting what's already working.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* 9 Steps Accordion */}
+  <section class="bg-[var(--color-warm-white)] relative noise-overlay-light">
+    <div class="section section-inner relative z-10">
+      <div class="max-w-[800px] mx-auto">
+        {steps.map((step, i) => (
+          <div class="border-b border-gray-200 reveal" style={`transition-delay: ${Math.min(i * 0.05, 0.3)}s;`}>
+            <button
+              class="accordion-trigger w-full flex items-center justify-between py-6 md:py-7 text-left group"
+              data-index={i}
+              aria-expanded={i === 0 ? "true" : "false"}
+            >
+              <div class="flex items-center gap-5 md:gap-8">
+                <span class="text-sm font-bold tracking-[1.5px] text-[var(--color-teal)] min-w-[28px]">
+                  {step.num}
+                </span>
+                <span
+                  class:list={[
+                    "text-lg md:text-xl font-bold transition-colors duration-200",
+                    i === 0 ? "text-[var(--color-teal)]" : "text-[var(--color-dark)] group-hover:text-[var(--color-teal)]",
+                  ]}
+                  style="font-family: var(--font-heading);"
+                >
+                  {step.title}
+                </span>
+              </div>
+              <span
+                class:list={[
+                  "accordion-icon text-2xl font-light text-[var(--color-teal)] flex-shrink-0",
+                  i === 0 && "open",
+                ]}
+              >
+                +
+              </span>
+            </button>
+            <div class:list={["accordion-content", i === 0 && "open"]}>
+              <p class="pb-7 pl-[48px] md:pl-[64px] pr-8 text-[var(--color-text-light)] leading-relaxed max-w-[600px]">
+                {step.desc}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* C.O.R.E. Section */}
+  <section class="relative bg-[var(--color-dark)] noise-overlay overflow-hidden">
+    <div
+      class="absolute top-0 right-0 w-[50%] h-full pointer-events-none"
+      style="background: radial-gradient(circle at top right, rgba(13,115,119,0.12) 0%, transparent 60%);"
+    ></div>
+
+    <div class="section section-inner relative z-10">
+      <div class="text-center max-w-[700px] mx-auto mb-16">
+        <p class="eyebrow mb-4 reveal">Our Framework</p>
+        <h2
+          class="text-white mb-5 reveal"
+          style="font-size: clamp(30px, 3.5vw, 44px); font-weight: 700; transition-delay: 0.1s;"
+        >
+          Why Our Changes Stick
+        </h2>
+        <p class="text-white/60 text-lg leading-relaxed reveal" style="transition-delay: 0.15s;">
+          Most consulting engagements fail because behavior doesn't change. C.O.R.E. is how we make sure it does.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-stagger>
+        {coreBlocks.map((block) => (
+          <div class="reveal-stagger text-center p-6">
+            <div
+              class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5 text-2xl font-bold text-[var(--color-teal)]"
+              style="background: rgba(13,115,119,0.15);"
+            >
+              {block.letter}
+            </div>
+            <h3 class="text-white text-lg font-bold mb-3" style="font-family: var(--font-heading);">
+              {block.title}
+            </h3>
+            <p class="text-white/50 text-sm leading-relaxed">
+              {block.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Engagement Timeline */}
+  <section class="bg-white">
+    <div class="section section-inner">
+      <div class="text-center max-w-[700px] mx-auto mb-16">
+        <p class="eyebrow mb-4 reveal">Timeline</p>
+        <h2
+          class="reveal"
+          style="font-size: clamp(30px, 3.5vw, 44px); font-weight: 700; transition-delay: 0.1s;"
+        >
+          What to Expect
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" data-stagger>
+        {timeline.map((phase) => (
+          <div
+            class="reveal-stagger rounded-xl p-7 border border-gray-200 relative"
+            style="background: var(--color-warm-white);"
+          >
+            <span class="text-[11px] font-bold uppercase tracking-[1.5px] text-[var(--color-teal)] block mb-2">
+              {phase.weeks}
+            </span>
+            <h3 class="text-lg font-bold text-[var(--color-dark)] mb-3" style="font-family: var(--font-heading);">
+              {phase.phase}
+            </h3>
+            <p class="text-sm text-[var(--color-text-light)] leading-relaxed">
+              {phase.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-center text-[var(--color-text-light)] max-w-[640px] mx-auto leading-relaxed reveal">
+        Every engagement is scoped to your company's size and complexity. Some businesses need a focused workflow redesign. Others need a full operational overhaul. We'll tell you exactly what we recommend during your free strategy call.
+      </p>
+    </div>
+  </section>
+
+  <FinalCTA
+    headline="Ready to Modernize?"
+    body="Book a free strategy call and we'll show you exactly where your operations can improve."
+    ctaLabel="Book a Free Strategy Call →"
+  />
+</Layout>
+
+<script>
+  function initAccordion() {
+    const triggers = document.querySelectorAll('.accordion-trigger');
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const content = trigger.nextElementSibling as HTMLElement;
+        const icon = trigger.querySelector('.accordion-icon') as HTMLElement;
+        const title = trigger.querySelector('span:nth-child(2)') as HTMLElement;
+        const isOpen = content.classList.contains('open');
+
+        // Close all
+        triggers.forEach((t) => {
+          const c = t.nextElementSibling as HTMLElement;
+          const ic = t.querySelector('.accordion-icon') as HTMLElement;
+          const ti = t.querySelector('span:nth-child(2)') as HTMLElement;
+          if (c) c.classList.remove('open');
+          if (ic) ic.classList.remove('open');
+          if (ti) ti.style.color = '';
+          t.setAttribute('aria-expanded', 'false');
+        });
+
+        // Open clicked if it was closed
+        if (!isOpen) {
+          content.classList.add('open');
+          icon.classList.add('open');
+          if (title) title.style.color = 'var(--color-teal)';
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  }
+
+  initAccordion();
+  document.addEventListener('astro:after-swap', initAccordion);
+</script>

@@ -1,0 +1,111 @@
+---
+interface Props {
+  eyebrow?: string;
+  headlineParts?: string[];
+  accentText?: string;
+  subheadline: string;
+  primaryCta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
+  showVideo?: boolean;
+  isHomepage?: boolean;
+}
+
+const {
+  eyebrow,
+  headlineParts = [],
+  accentText,
+  subheadline,
+  primaryCta,
+  secondaryCta,
+  showVideo = false,
+  isHomepage = false,
+} = Astro.props;
+---
+
+<section
+  class="relative overflow-hidden"
+  style={isHomepage ? "min-height: calc(85vh - 72px);" : ""}
+>
+  <div
+    class:list={[
+      "section section-inner flex flex-col justify-center",
+      isHomepage ? "py-20 md:py-28 lg:py-36" : "py-16 md:py-24 lg:py-28",
+    ]}
+  >
+    <div class="max-w-[800px]">
+      {eyebrow && (
+        <p class:list={["eyebrow mb-6", isHomepage && "hero-eyebrow"]}>
+          <span class="accent-dot">{eyebrow}</span>
+        </p>
+      )}
+
+      {isHomepage ? (
+        <h1
+          class="mb-6"
+          style="font-size: clamp(42px, 5.5vw, 72px); font-weight: 700; line-height: 1.08;"
+        >
+          {headlineParts.map((line) => (
+            <div class="hero-headline-line">
+              <span set:html={line} />
+            </div>
+          ))}
+        </h1>
+      ) : (
+        <h1
+          class="mb-6 hero-headline-line"
+          style="font-size: clamp(36px, 4.5vw, 56px); font-weight: 700; line-height: 1.1;"
+        >
+          <span>
+            <slot name="headline" />
+          </span>
+        </h1>
+      )}
+
+      <p
+        class:list={[
+          "text-lg md:text-xl max-w-[640px] mb-10",
+          isHomepage && "hero-sub",
+        ]}
+        style="color: var(--color-text-light); line-height: 1.7;"
+      >
+        {subheadline}
+      </p>
+
+      {(primaryCta || secondaryCta) && (
+        <div class:list={["flex flex-wrap gap-4", isHomepage && "hero-cta"]}>
+          {primaryCta && (
+            <a href={primaryCta.href} class="btn-primary">
+              {primaryCta.label}
+            </a>
+          )}
+          {secondaryCta && (
+            <a href={secondaryCta.href} class="btn-secondary">
+              {secondaryCta.label}
+            </a>
+          )}
+        </div>
+      )}
+    </div>
+
+    {showVideo && (
+      <!-- FOUNDER VIDEO: Replace with embed when ready -->
+      <div class="hero-video mt-14 max-w-[560px]">
+        <div
+          class="relative rounded-2xl overflow-hidden"
+          style="background: var(--color-dark); aspect-ratio: 16/9;"
+        >
+          <div class="absolute inset-0 flex flex-col items-center justify-center text-white/70">
+            <div
+              class="w-16 h-16 rounded-full border-2 border-white/30 flex items-center justify-center mb-4 hover:border-white/60 hover:bg-white/10 transition-all duration-300 cursor-pointer"
+            >
+              <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+            <p class="text-sm font-medium text-white/50">Meet the Founders — 60 sec</p>
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
+</section>

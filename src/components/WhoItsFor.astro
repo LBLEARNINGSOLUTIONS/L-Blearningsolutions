@@ -1,0 +1,69 @@
+---
+const checklist = [
+  "You know something needs to change, but need a partner who can build it",
+  "You want someone to modernize how your company runs, not deliver a 60-page report",
+  "You're ready to move fast and make changes that stick",
+];
+
+const afterItems = [
+  "Operations run without you in the middle of every decision",
+  "Your team executes with clarity instead of guessing",
+  "Software supports the work instead of creating more of it",
+  "AI handles the repetitive work — managed by us, producing results for you",
+  "Growth feels like progress instead of pressure",
+];
+---
+
+<section class="bg-white">
+  <div class="section section-inner">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+      {/* Left Column */}
+      <div class="reveal">
+        <p class="eyebrow mb-4">Is This for You?</p>
+        <h2
+          class="mb-6"
+          style="font-size: clamp(28px, 3.5vw, 40px); font-weight: 700;"
+        >
+          Built for founders who know their business can run better.
+        </h2>
+        <p class="text-[var(--color-text-light)] text-lg leading-relaxed mb-8">
+          This is for CEOs and operators of companies doing $1M–$20M. You've grown—but your operations haven't kept up. Your team is capable, but the systems they're working inside are holding them back.
+        </p>
+
+        <ul class="space-y-4">
+          {checklist.map((item) => (
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 flex-shrink-0 text-[var(--color-teal)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-[var(--color-text)] leading-relaxed">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Right Column — After Card */}
+      <div class="reveal" style="transition-delay: 0.15s;">
+        <div
+          class="rounded-xl p-8 md:p-10 border border-gray-200"
+          style="background: var(--color-warm-white);"
+        >
+          <h3 class="text-lg font-bold text-[var(--color-dark)] mb-6" style="font-family: var(--font-heading);">
+            After Modernization:
+          </h3>
+
+          <ul class="space-y-4">
+            {afterItems.map((item) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-4 h-4 mt-1.5 flex-shrink-0 text-[var(--color-teal)]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M10 17l5-5-5-5v10z" />
+                </svg>
+                <span class="text-[15px] text-[var(--color-text)] leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

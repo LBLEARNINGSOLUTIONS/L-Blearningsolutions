@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CalendlyPlaceholder from '../components/CalendlyPlaceholder.astro';
+---
+
+<Layout
+  title="Contact | L&B Learning Solutions"
+  description="Book a free 30-minute strategy call. We'll identify your biggest operational leverage points and tell you exactly how we'd approach it."
+>
+  {/* Hero */}
+  <section class="bg-white">
+    <div class="section section-inner py-20 md:py-28 lg:py-32">
+      <div class="max-w-[800px]">
+        <p class="eyebrow mb-6 hero-eyebrow">
+          <span class="accent-dot">Get Started</span>
+        </p>
+        <h1
+          class="mb-6 hero-headline-line"
+          style="font-size: clamp(36px, 4.5vw, 56px); font-weight: 700; line-height: 1.1;"
+        >
+          <span>Let's See What's Possible.</span>
+        </h1>
+        <p class="hero-sub text-lg md:text-xl max-w-[640px]" style="color: var(--color-text-light); line-height: 1.7;">
+          Book a free 30-minute strategy call. We'll identify your biggest operational leverage points and tell you exactly how we'd approach it. No proposals. No decks. Just a clear conversation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* Calendly + Info */}
+  <section class="bg-[var(--color-warm-white)] relative noise-overlay-light">
+    <div class="section section-inner relative z-10">
+      <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
+        {/* Calendly */}
+        <div class="lg:col-span-3">
+          <CalendlyPlaceholder />
+        </div>
+
+        {/* Info */}
+        <div class="lg:col-span-2">
+          <div class="reveal">
+            <h3
+              class="text-lg font-bold text-[var(--color-dark)] mb-6"
+              style="font-family: var(--font-heading);"
+            >
+              What to Expect
+            </h3>
+            <ul class="space-y-5 mb-10">
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[var(--color-teal-bg)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-xs font-bold text-[var(--color-teal)]">1</span>
+                </span>
+                <div>
+                  <p class="font-semibold text-[var(--color-dark)] text-[15px]">Quick intro</p>
+                  <p class="text-sm text-[var(--color-text-light)]">Tell us about your business, your team, and what's not working.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[var(--color-teal-bg)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-xs font-bold text-[var(--color-teal)]">2</span>
+                </span>
+                <div>
+                  <p class="font-semibold text-[var(--color-dark)] text-[15px]">Honest assessment</p>
+                  <p class="text-sm text-[var(--color-text-light)]">We'll share initial observations and where we'd focus first.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[var(--color-teal-bg)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-xs font-bold text-[var(--color-teal)]">3</span>
+                </span>
+                <div>
+                  <p class="font-semibold text-[var(--color-dark)] text-[15px]">Clear next steps</p>
+                  <p class="text-sm text-[var(--color-text-light)]">If there's a fit, we'll outline exactly what an engagement looks like.</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="pt-8 border-t border-gray-200">
+              <h3
+                class="text-lg font-bold text-[var(--color-dark)] mb-4"
+                style="font-family: var(--font-heading);"
+              >
+                Prefer email?
+              </h3>
+              <a
+                href="mailto:hello@lblearningsolutions.com"
+                class="text-[var(--color-teal)] font-medium hover:text-[var(--color-teal-light)] transition-colors duration-200"
+              >
+                hello@lblearningsolutions.com
+              </a>
+              <p class="text-sm text-[var(--color-text-light)] mt-2">
+                We respond within one business day.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Trust Bar */}
+  <section class="bg-white">
+    <div class="section section-inner py-16 md:py-20">
+      <div class="text-center max-w-[600px] mx-auto reveal">
+        <p class="text-lg text-[var(--color-text-light)] leading-relaxed mb-8">
+          "I've introduced them to my entire circle of influence because they've earned that level of confidence from me."
+        </p>
+        <p class="text-sm font-bold text-[var(--color-dark)]">Jay Carnahan</p>
+        <p class="text-sm text-[var(--color-text-light)]">State Farm Agent</p>
+      </div>
+    </div>
+  </section>
+</Layout>

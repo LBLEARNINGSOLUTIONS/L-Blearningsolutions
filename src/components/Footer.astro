@@ -1,0 +1,63 @@
+---
+const navLinks = [
+  { label: "How We Work", href: "/how-we-work" },
+  { label: "AI Solutions", href: "/ai-solutions" },
+  { label: "Results", href: "/results" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
+---
+
+<footer class="bg-[var(--color-dark)] text-white/60">
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+    <!-- Top Row -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pt-16 pb-10">
+      <!-- Logo + Tagline -->
+      <div>
+        <a href="/" class="inline-block mb-3">
+          <img
+            src="/logo-light.png"
+            alt="L&B Learning Solutions"
+            class="h-7 opacity-80"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          />
+          <span
+            class="hidden items-center font-bold text-lg tracking-tight text-white/80"
+            style="font-family: var(--font-heading);"
+          >
+            L&B
+          </span>
+        </a>
+        <p class="text-sm text-white/40">We modernize how businesses run.</p>
+      </div>
+
+      <!-- Nav Links -->
+      <nav class="flex flex-wrap gap-x-8 gap-y-3">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-[13px] text-white/50 hover:text-white/80 transition-colors duration-200"
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+
+    <!-- Divider -->
+    <div class="h-px bg-white/10"></div>
+
+    <!-- Bottom Row -->
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-4 py-8">
+      <p class="text-[13px] text-white/30">
+        &copy; 2026 L&B Learning Solutions. All rights reserved.
+      </p>
+      <a
+        href="mailto:hello@lblearningsolutions.com"
+        class="text-[13px] text-white/40 hover:text-white/70 transition-colors duration-200"
+      >
+        hello@lblearningsolutions.com
+      </a>
+    </div>
+  </div>
+</footer>

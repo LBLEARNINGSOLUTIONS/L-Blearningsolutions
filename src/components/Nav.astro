@@ -1,0 +1,130 @@
+---
+const navLinks = [
+  { label: "How We Work", href: "/how-we-work" },
+  { label: "AI Solutions", href: "/ai-solutions" },
+  { label: "Results", href: "/results" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
+---
+
+<header
+  id="site-nav"
+  class="fixed top-0 left-0 right-0 z-50 h-[72px] flex items-center transition-all duration-300"
+  style="background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06);"
+>
+  <div class="w-full max-w-[1200px] mx-auto px-6 md:px-12 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex-shrink-0">
+      <img
+        src="/logo-dark.png"
+        alt="L&B Learning Solutions"
+        class="h-9"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+      />
+      <span
+        class="hidden items-center font-bold text-xl tracking-tight"
+        style="font-family: var(--font-heading); color: var(--color-dark);"
+      >
+        L&B
+      </span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:flex items-center gap-8">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="text-sm font-medium transition-colors duration-200"
+          style="color: var(--color-text-light);"
+          onmouseenter="this.style.color='var(--color-dark)'"
+          onmouseleave="this.style.color='var(--color-text-light)'"
+        >
+          {link.label}
+        </a>
+      ))}
+      <a href="/contact" class="btn-primary text-sm !py-[10px] !px-6">
+        Book a Strategy Call
+      </a>
+    </nav>
+
+    <!-- Mobile Hamburger -->
+    <button
+      id="mobile-menu-btn"
+      class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] relative z-60"
+      aria-label="Toggle navigation menu"
+    >
+      <span class="hamburger-line w-6 h-[2px] bg-[var(--color-dark)] transition-all duration-300 origin-center"></span>
+      <span class="hamburger-line w-6 h-[2px] bg-[var(--color-dark)] transition-all duration-300 origin-center"></span>
+      <span class="hamburger-line w-6 h-[2px] bg-[var(--color-dark)] transition-all duration-300 origin-center"></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-40 pointer-events-none opacity-0 transition-opacity duration-300"
+  style="background: rgba(26,26,46,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);"
+>
+  <nav class="flex flex-col items-center justify-center h-full gap-8">
+    {navLinks.map((link) => (
+      <a
+        href={link.href}
+        class="text-2xl font-medium text-white/80 hover:text-white transition-colors duration-200 mobile-nav-link"
+      >
+        {link.label}
+      </a>
+    ))}
+    <a href="/contact" class="btn-primary mt-4 text-lg">
+      Book a Strategy Call
+    </a>
+  </nav>
+</div>
+
+<!-- Spacer for fixed nav -->
+<div class="h-[72px]"></div>
+
+<script>
+  function initNav() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (!btn || !menu) return;
+
+    let isOpen = false;
+    const lines = btn.querySelectorAll('.hamburger-line');
+
+    btn.addEventListener('click', () => {
+      isOpen = !isOpen;
+
+      if (isOpen) {
+        menu.classList.remove('opacity-0', 'pointer-events-none');
+        menu.classList.add('opacity-100', 'pointer-events-auto');
+        (lines[0] as HTMLElement).style.transform = 'rotate(45deg) translateY(3.5px)';
+        (lines[1] as HTMLElement).style.opacity = '0';
+        (lines[2] as HTMLElement).style.transform = 'rotate(-45deg) translateY(-3.5px)';
+        // Change hamburger lines to white when menu is open
+        lines.forEach(l => (l as HTMLElement).style.background = 'white');
+        document.body.style.overflow = 'hidden';
+      } else {
+        menu.classList.add('opacity-0', 'pointer-events-none');
+        menu.classList.remove('opacity-100', 'pointer-events-auto');
+        (lines[0] as HTMLElement).style.transform = '';
+        (lines[1] as HTMLElement).style.opacity = '1';
+        (lines[2] as HTMLElement).style.transform = '';
+        lines.forEach(l => (l as HTMLElement).style.background = '');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close menu on link click
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (isOpen) btn.click();
+      });
+    });
+  }
+
+  initNav();
+  document.addEventListener('astro:after-swap', initNav);
+</script>

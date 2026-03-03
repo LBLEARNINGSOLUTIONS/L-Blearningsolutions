@@ -1,0 +1,66 @@
+---
+interface Props {
+  headline?: string;
+  body?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  variant?: 'dark' | 'teal';
+}
+
+const {
+  headline = "The Longer You Wait, the More It Costs.",
+  body = "We start with a free strategy call to understand where your business is and what's not working. No generic proposals. No pressure. Just a clear look at what's possible.",
+  ctaLabel = "Book Your Free Strategy Call →",
+  ctaHref = "/contact",
+  variant = 'dark',
+} = Astro.props;
+
+const isDark = variant === 'dark';
+---
+
+<section
+  class="relative overflow-hidden noise-overlay"
+  style={isDark
+    ? "background: var(--color-dark);"
+    : "background: var(--color-teal);"}
+>
+  {/* Teal radial glow */}
+  {isDark && (
+    <div
+      class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[60%] pointer-events-none"
+      style="background: radial-gradient(ellipse at bottom center, rgba(13,115,119,0.15) 0%, transparent 70%);"
+    ></div>
+  )}
+
+  {!isDark && (
+    <div
+      class="absolute inset-0 pointer-events-none"
+      style="background: linear-gradient(135deg, rgba(0,0,0,0.12) 0%, transparent 50%, rgba(255,255,255,0.06) 100%);"
+    ></div>
+  )}
+
+  <div class="section section-inner relative z-10 text-center">
+    <h2
+      class="text-white mb-6 max-w-[700px] mx-auto reveal"
+      style="font-size: clamp(30px, 3.5vw, 44px); font-weight: 700;"
+    >
+      {headline}
+    </h2>
+    {body && (
+      <p class="text-white/70 text-lg max-w-[560px] mx-auto mb-10 leading-relaxed reveal" style="transition-delay: 0.1s;">
+        {body}
+      </p>
+    )}
+    <div class="reveal" style="transition-delay: 0.2s;">
+      <a
+        href={ctaHref}
+        class="inline-flex items-center gap-2 px-8 py-4 bg-white text-[var(--color-dark)] font-bold rounded-lg text-base transition-all duration-200 hover:-translate-y-0.5"
+        style="box-shadow: 0 4px 20px rgba(0,0,0,0.2);"
+        onmouseenter="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.3)'"
+        onmouseleave="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.2)'"
+      >
+        {ctaLabel}
+      </a>
+    </div>
+  </div>
+</section>
