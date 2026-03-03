@@ -41,7 +41,7 @@ const {
 
       {isHomepage ? (
         <h1
-          class="mb-6"
+          class="mb-6 text-[var(--color-text-bright)]"
           style="font-size: clamp(42px, 5.5vw, 72px); font-weight: 700; line-height: 1.08;"
         >
           {headlineParts.map((line) => (
@@ -52,7 +52,7 @@ const {
         </h1>
       ) : (
         <h1
-          class="mb-6 hero-headline-line"
+          class="mb-6 hero-headline-line text-[var(--color-text-bright)]"
           style="font-size: clamp(36px, 4.5vw, 56px); font-weight: 700; line-height: 1.1;"
         >
           <span>
@@ -66,7 +66,7 @@ const {
           "text-lg md:text-xl max-w-[640px] mb-10",
           isHomepage && "hero-sub",
         ]}
-        style="color: var(--color-text-light); line-height: 1.7;"
+        style="color: var(--color-text); line-height: 1.7;"
       >
         {subheadline}
       </p>
@@ -92,7 +92,7 @@ const {
       <div class="hero-video mt-14 max-w-[560px]">
         <div
           class="relative rounded-2xl overflow-hidden"
-          style="background: var(--color-dark); aspect-ratio: 16/9;"
+          style="background: var(--color-surface-card); aspect-ratio: 16/9;"
         >
           <div class="absolute inset-0 flex flex-col items-center justify-center text-white/70">
             <div

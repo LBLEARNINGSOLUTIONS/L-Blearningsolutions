@@ -86,19 +86,19 @@ const timeline = [
   description="Our 9-step modernization process redesigns how your business operates—from audit to implementation to measurement. See exactly what an engagement looks like."
 >
   {/* Hero */}
-  <section class="bg-white">
+  <section>
     <div class="section section-inner py-20 md:py-28 lg:py-32">
       <div class="max-w-[800px]">
         <p class="eyebrow mb-6 hero-eyebrow">
           <span class="accent-dot">Our Process</span>
         </p>
         <h1
-          class="mb-6 hero-headline-line"
+          class="mb-6 hero-headline-line text-[var(--color-text-bright)]"
           style="font-size: clamp(36px, 4.5vw, 56px); font-weight: 700; line-height: 1.1;"
         >
           <span>A Proven System. Not a Generic Playbook.</span>
         </h1>
-        <p class="hero-sub text-lg md:text-xl max-w-[640px]" style="color: var(--color-text-light); line-height: 1.7;">
+        <p class="hero-sub text-lg md:text-xl max-w-[640px]" style="color: var(--color-text); line-height: 1.7;">
           Every engagement runs through our 9-step modernization process—designed to move your business from where it is to where it needs to be, without disrupting what's already working.
         </p>
       </div>
@@ -106,24 +106,24 @@ const timeline = [
   </section>
 
   {/* 9 Steps Accordion */}
-  <section class="bg-[var(--color-warm-white)] relative noise-overlay-light">
+  <section class="bg-[var(--color-surface)] relative noise-overlay">
     <div class="section section-inner relative z-10">
       <div class="max-w-[800px] mx-auto">
         {steps.map((step, i) => (
-          <div class="border-b border-gray-200 reveal" style={`transition-delay: ${Math.min(i * 0.05, 0.3)}s;`}>
+          <div class="border-b border-[var(--color-border)] reveal" style={`transition-delay: ${Math.min(i * 0.05, 0.3)}s;`}>
             <button
               class="accordion-trigger w-full flex items-center justify-between py-6 md:py-7 text-left group"
               data-index={i}
               aria-expanded={i === 0 ? "true" : "false"}
             >
               <div class="flex items-center gap-5 md:gap-8">
-                <span class="text-sm font-bold tracking-[1.5px] text-[var(--color-teal)] min-w-[28px]">
+                <span class="text-sm font-bold tracking-[1.5px] text-[var(--color-accent)] min-w-[28px]">
                   {step.num}
                 </span>
                 <span
                   class:list={[
                     "text-lg md:text-xl font-bold transition-colors duration-200",
-                    i === 0 ? "text-[var(--color-teal)]" : "text-[var(--color-dark)] group-hover:text-[var(--color-teal)]",
+                    i === 0 ? "text-[var(--color-accent)]" : "text-[var(--color-text-bright)] group-hover:text-[var(--color-accent)]",
                   ]}
                   style="font-family: var(--font-heading);"
                 >
@@ -132,7 +132,7 @@ const timeline = [
               </div>
               <span
                 class:list={[
-                  "accordion-icon text-2xl font-light text-[var(--color-teal)] flex-shrink-0",
+                  "accordion-icon text-2xl font-light text-[var(--color-accent)] flex-shrink-0",
                   i === 0 && "open",
                 ]}
               >
@@ -154,7 +154,7 @@ const timeline = [
   <section class="relative bg-[var(--color-dark)] noise-overlay overflow-hidden">
     <div
       class="absolute top-0 right-0 w-[50%] h-full pointer-events-none"
-      style="background: radial-gradient(circle at top right, rgba(13,115,119,0.12) 0%, transparent 60%);"
+      style="background: radial-gradient(circle at top right, rgba(255,77,0,0.08) 0%, transparent 60%);"
     ></div>
 
     <div class="section section-inner relative z-10">
@@ -175,8 +175,8 @@ const timeline = [
         {coreBlocks.map((block) => (
           <div class="reveal-stagger text-center p-6">
             <div
-              class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5 text-2xl font-bold text-[var(--color-teal)]"
-              style="background: rgba(13,115,119,0.15);"
+              class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5 text-2xl font-bold text-[var(--color-accent)]"
+              style="background: rgba(255,77,0,0.12);"
             >
               {block.letter}
             </div>
@@ -193,12 +193,12 @@ const timeline = [
   </section>
 
   {/* Engagement Timeline */}
-  <section class="bg-white">
+  <section class="bg-[var(--color-surface)]">
     <div class="section section-inner">
       <div class="text-center max-w-[700px] mx-auto mb-16">
         <p class="eyebrow mb-4 reveal">Timeline</p>
         <h2
-          class="reveal"
+          class="reveal text-[var(--color-text-bright)]"
           style="font-size: clamp(30px, 3.5vw, 44px); font-weight: 700; transition-delay: 0.1s;"
         >
           What to Expect
@@ -208,13 +208,13 @@ const timeline = [
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" data-stagger>
         {timeline.map((phase) => (
           <div
-            class="reveal-stagger rounded-xl p-7 border border-gray-200 relative"
-            style="background: var(--color-warm-white);"
+            class="reveal-stagger rounded-xl p-7 border border-[var(--color-border)] relative"
+            style="background: var(--color-surface-card);"
           >
-            <span class="text-[11px] font-bold uppercase tracking-[1.5px] text-[var(--color-teal)] block mb-2">
+            <span class="text-[11px] font-bold uppercase tracking-[1.5px] text-[var(--color-accent)] block mb-2">
               {phase.weeks}
             </span>
-            <h3 class="text-lg font-bold text-[var(--color-dark)] mb-3" style="font-family: var(--font-heading);">
+            <h3 class="text-lg font-bold text-[var(--color-text-bright)] mb-3" style="font-family: var(--font-heading);">
               {phase.phase}
             </h3>
             <p class="text-sm text-[var(--color-text-light)] leading-relaxed">
@@ -263,7 +263,7 @@ const timeline = [
         if (!isOpen) {
           content.classList.add('open');
           icon.classList.add('open');
-          if (title) title.style.color = 'var(--color-teal)';
+          if (title) title.style.color = 'var(--color-accent)';
           trigger.setAttribute('aria-expanded', 'true');
         }
       });

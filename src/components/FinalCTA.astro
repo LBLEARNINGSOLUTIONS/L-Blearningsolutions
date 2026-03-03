@@ -21,14 +21,14 @@ const isDark = variant === 'dark';
 <section
   class="relative overflow-hidden noise-overlay"
   style={isDark
-    ? "background: var(--color-dark);"
-    : "background: var(--color-teal);"}
+    ? "background: var(--color-surface);"
+    : "background: var(--color-accent);"}
 >
-  {/* Teal radial glow */}
+  {/* Orange radial glow */}
   {isDark && (
     <div
       class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[60%] pointer-events-none"
-      style="background: radial-gradient(ellipse at bottom center, rgba(13,115,119,0.15) 0%, transparent 70%);"
+      style="background: radial-gradient(ellipse at bottom center, rgba(255,77,0,0.12) 0%, transparent 70%);"
     ></div>
   )}
 
@@ -54,7 +54,7 @@ const isDark = variant === 'dark';
     <div class="reveal" style="transition-delay: 0.2s;">
       <a
         href={ctaHref}
-        class="inline-flex items-center gap-2 px-8 py-4 bg-white text-[var(--color-dark)] font-bold rounded-lg text-base transition-all duration-200 hover:-translate-y-0.5"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-white text-[var(--color-dark)] font-bold rounded-full text-base transition-all duration-200 hover:-translate-y-0.5"
         style="box-shadow: 0 4px 20px rgba(0,0,0,0.2);"
         onmouseenter="this.style.boxShadow='0 8px 32px rgba(0,0,0,0.3)'"
         onmouseleave="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.2)'"

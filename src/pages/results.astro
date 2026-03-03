@@ -10,19 +10,19 @@ import { testimonials } from '../data/testimonials';
   description="See how we've modernized operations across trucking, insurance, veterinary, real estate, and more. Real client stories, real results."
 >
   {/* Hero */}
-  <section class="bg-white">
+  <section>
     <div class="section section-inner py-20 md:py-28 lg:py-32">
       <div class="max-w-[800px]">
         <p class="eyebrow mb-6 hero-eyebrow">
           <span class="accent-dot">Client Results</span>
         </p>
         <h1
-          class="mb-6 hero-headline-line"
+          class="mb-6 hero-headline-line text-[var(--color-text-bright)]"
           style="font-size: clamp(36px, 4.5vw, 56px); font-weight: 700; line-height: 1.1;"
         >
           <span>Real Results. Real Businesses. No Fluff.</span>
         </h1>
-        <p class="hero-sub text-lg md:text-xl max-w-[640px]" style="color: var(--color-text-light); line-height: 1.7;">
+        <p class="hero-sub text-lg md:text-xl max-w-[640px]" style="color: var(--color-text); line-height: 1.7;">
           We've modernized operations across trucking, insurance, veterinary, real estate, and more. Here's what our clients say.
         </p>
       </div>
@@ -30,7 +30,7 @@ import { testimonials } from '../data/testimonials';
   </section>
 
   {/* Client Stories */}
-  <section class="bg-[var(--color-warm-white)] relative noise-overlay-light">
+  <section class="bg-[var(--color-surface)] relative noise-overlay">
     <div class="section section-inner relative z-10">
       <div class="grid gap-8 max-w-[900px] mx-auto" data-stagger>
         {testimonials.map((t) => (

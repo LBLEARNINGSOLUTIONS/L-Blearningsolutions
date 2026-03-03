@@ -12,12 +12,12 @@ const steps = [
 ];
 ---
 
-<section class="bg-white">
+<section class="bg-[var(--color-dark)]">
   <div class="section section-inner">
     <div class="text-center max-w-[700px] mx-auto mb-16 md:mb-20">
       <p class="eyebrow mb-4 reveal">Our Method</p>
       <h2
-        class="reveal"
+        class="reveal text-[var(--color-text-bright)]"
         style="font-size: clamp(30px, 3.5vw, 44px); font-weight: 700; transition-delay: 0.1s;"
       >
         A proven system. Not a generic playbook.
@@ -27,15 +27,15 @@ const steps = [
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" data-stagger>
       {steps.map((step) => (
         <div
-          class="reveal-stagger group rounded-xl p-7 transition-all duration-300 hover:bg-white border border-transparent hover:border-gray-200 hover:-translate-y-1 cursor-default"
-          style="background: var(--color-warm-white);"
-          onmouseenter="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.06)'"
+          class="reveal-stagger group rounded-xl p-7 transition-all duration-300 hover:bg-[var(--color-surface-light)] border border-transparent hover:border-[var(--color-border)] hover:-translate-y-1 cursor-default"
+          style="background: var(--color-surface-card);"
+          onmouseenter="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.3)'"
           onmouseleave="this.style.boxShadow='none'"
         >
-          <span class="text-[13px] font-bold uppercase tracking-[1.5px] text-[var(--color-teal)] mb-3 block">
+          <span class="text-[13px] font-bold uppercase tracking-[1.5px] text-[var(--color-accent)] mb-3 block">
             Step {step.num}
           </span>
-          <h3 class="text-lg font-bold text-[var(--color-dark)] mb-2" style="font-family: var(--font-heading);">
+          <h3 class="text-lg font-bold text-[var(--color-text-bright)] mb-2" style="font-family: var(--font-heading);">
             {step.title}
           </h3>
           <p class="text-sm leading-relaxed text-[var(--color-text-light)]">

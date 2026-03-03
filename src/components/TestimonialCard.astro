@@ -11,15 +11,15 @@ const { industry, quote, author, role, initials } = Astro.props;
 ---
 
 <div
-  class="bg-white rounded-xl p-8 md:p-10 border border-gray-200 transition-all duration-250 hover:-translate-y-1 relative"
-  style="box-shadow: 0 1px 3px rgba(0,0,0,0.04); border-left: 3px solid var(--color-teal);"
-  onmouseenter="this.style.boxShadow='0 12px 36px rgba(0,0,0,0.08)'"
-  onmouseleave="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.04)'"
+  class="bg-[var(--color-surface-card)] rounded-xl p-8 md:p-10 border border-[var(--color-border)] transition-all duration-250 hover:-translate-y-1 relative"
+  style="box-shadow: 0 1px 3px rgba(0,0,0,0.2); border-left: 3px solid var(--color-accent);"
+  onmouseenter="this.style.boxShadow='0 12px 36px rgba(0,0,0,0.3)'"
+  onmouseleave="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.2)'"
 >
   {/* Industry Tag */}
   <span
     class="inline-block text-[11px] font-semibold uppercase tracking-[1.5px] px-3 py-1 rounded-full mb-6"
-    style="background: var(--color-teal-bg); color: var(--color-teal);"
+    style="background: var(--color-accent-bg); color: var(--color-accent);"
   >
     {industry}
   </span>
@@ -27,7 +27,7 @@ const { industry, quote, author, role, initials } = Astro.props;
   {/* Decorative Quote Mark */}
   <div
     class="text-6xl leading-none mb-2 select-none"
-    style="font-family: var(--font-heading); color: rgba(13,115,119,0.15);"
+    style="font-family: var(--font-heading); color: rgba(255,77,0,0.15);"
   >
     &ldquo;
   </div>
@@ -41,12 +41,12 @@ const { industry, quote, author, role, initials } = Astro.props;
   <div class="flex items-center gap-3">
     <div
       class="w-11 h-11 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0"
-      style="background: var(--color-teal);"
+      style="background: var(--color-accent);"
     >
       {initials}
     </div>
     <div>
-      <p class="text-[15px] font-bold text-[var(--color-dark)]">{author}</p>
+      <p class="text-[15px] font-bold text-[var(--color-text-bright)]">{author}</p>
       <p class="text-[13px] text-[var(--color-text-light)]">{role}</p>
     </div>
   </div>

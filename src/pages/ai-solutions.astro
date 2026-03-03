@@ -58,19 +58,19 @@ const afterItems = [
   description="We become your AI department — auditing where AI fits, building and managing agents, training your team, and automating workflows. Applied AI that saves time and sharpens output."
 >
   {/* Hero */}
-  <section class="bg-white">
+  <section>
     <div class="section section-inner py-20 md:py-28 lg:py-32">
       <div class="max-w-[800px]">
         <p class="eyebrow mb-6 hero-eyebrow">
           <span class="accent-dot">AI Solutions</span>
         </p>
         <h1
-          class="mb-6 hero-headline-line"
+          class="mb-6 hero-headline-line text-[var(--color-text-bright)]"
           style="font-size: clamp(36px, 4.5vw, 56px); font-weight: 700; line-height: 1.1;"
         >
           <span>Stop Wondering What AI Can Do. Start Seeing It Work.</span>
         </h1>
-        <p class="hero-sub text-lg md:text-xl max-w-[640px] mb-10" style="color: var(--color-text-light); line-height: 1.7;">
+        <p class="hero-sub text-lg md:text-xl max-w-[640px] mb-10" style="color: var(--color-text); line-height: 1.7;">
           Most businesses know AI matters. But between the hype, the tools, and the jargon, it's impossible to know where to start. That's where we come in. We audit your operations, identify where AI creates real leverage, build and manage the tools, and train your team to use them with confidence.
         </p>
         <div class="hero-cta">
@@ -81,23 +81,23 @@ const afterItems = [
   </section>
 
   {/* The Problem */}
-  <section class="bg-[var(--color-warm-white)] relative noise-overlay-light">
+  <section class="bg-[var(--color-surface)] relative noise-overlay">
     <div class="section section-inner relative z-10">
       <h2
-        class="mb-16 md:mb-20 reveal"
+        class="mb-16 md:mb-20 reveal text-[var(--color-text-bright)]"
         style="font-size: clamp(30px, 3.5vw, 44px); font-weight: 700; max-width: 600px;"
       >
         AI is everywhere. Clarity is nowhere.
       </h2>
 
       <div class="space-y-10 md:space-y-14 max-w-[720px] mb-14">
-        <p class="text-xl md:text-2xl font-bold text-[var(--color-dark)] leading-snug reveal" style="font-family: var(--font-heading);">
+        <p class="text-xl md:text-2xl font-bold text-[var(--color-text-bright)] leading-snug reveal" style="font-family: var(--font-heading);">
           Your competitors are adopting AI. You're not sure what they're actually doing with it.
         </p>
-        <p class="text-xl md:text-2xl font-bold text-[var(--color-dark)] leading-snug reveal" style="font-family: var(--font-heading); transition-delay: 0.1s;">
+        <p class="text-xl md:text-2xl font-bold text-[var(--color-text-bright)] leading-snug reveal" style="font-family: var(--font-heading); transition-delay: 0.1s;">
           Your team is experimenting with ChatGPT on their own — with no strategy, no guardrails, and no ROI.
         </p>
-        <p class="text-xl md:text-2xl font-bold text-[var(--color-dark)] leading-snug reveal" style="font-family: var(--font-heading); transition-delay: 0.2s;">
+        <p class="text-xl md:text-2xl font-bold text-[var(--color-text-bright)] leading-snug reveal" style="font-family: var(--font-heading); transition-delay: 0.2s;">
           You've been pitched AI tools that promise everything and explain nothing.
         </p>
       </div>
@@ -109,32 +109,32 @@ const afterItems = [
   </section>
 
   {/* Our AI Services — Accordion */}
-  <section class="bg-white">
+  <section class="bg-[var(--color-dark)]">
     <div class="section section-inner">
       <div class="max-w-[800px] mx-auto">
         <p class="eyebrow mb-4 reveal">What We Do</p>
         <h2
-          class="mb-14 md:mb-16 reveal"
+          class="mb-14 md:mb-16 reveal text-[var(--color-text-bright)]"
           style="font-size: clamp(30px, 3.5vw, 44px); font-weight: 700; transition-delay: 0.1s;"
         >
           We become your AI department.
         </h2>
 
         {services.map((svc, i) => (
-          <div class="border-b border-gray-200 reveal" style={`transition-delay: ${Math.min(i * 0.05, 0.25)}s;`}>
+          <div class="border-b border-[var(--color-border)] reveal" style={`transition-delay: ${Math.min(i * 0.05, 0.25)}s;`}>
             <button
               class="ai-accordion-trigger w-full flex items-center justify-between py-6 md:py-7 text-left group"
               data-index={i}
               aria-expanded={i === 0 ? "true" : "false"}
             >
               <div class="flex items-center gap-5 md:gap-8">
-                <span class="text-sm font-bold tracking-[1.5px] text-[var(--color-teal)] min-w-[28px]">
+                <span class="text-sm font-bold tracking-[1.5px] text-[var(--color-accent)] min-w-[28px]">
                   {svc.num}
                 </span>
                 <span
                   class:list={[
                     "text-lg md:text-xl font-bold transition-colors duration-200",
-                    i === 0 ? "text-[var(--color-teal)]" : "text-[var(--color-dark)] group-hover:text-[var(--color-teal)]",
+                    i === 0 ? "text-[var(--color-accent)]" : "text-[var(--color-text-bright)] group-hover:text-[var(--color-accent)]",
                   ]}
                   style="font-family: var(--font-heading);"
                 >
@@ -143,7 +143,7 @@ const afterItems = [
               </div>
               <span
                 class:list={[
-                  "accordion-icon text-2xl font-light text-[var(--color-teal)] flex-shrink-0",
+                  "accordion-icon text-2xl font-light text-[var(--color-accent)] flex-shrink-0",
                   i === 0 && "open",
                 ]}
               >
@@ -162,10 +162,10 @@ const afterItems = [
   </section>
 
   {/* How It Works */}
-  <section class="relative bg-[var(--color-dark)] noise-overlay overflow-hidden">
+  <section class="relative bg-[var(--color-surface)] noise-overlay overflow-hidden">
     <div
       class="absolute top-0 right-0 w-[50%] h-full pointer-events-none"
-      style="background: radial-gradient(circle at top right, rgba(13,115,119,0.12) 0%, transparent 60%);"
+      style="background: radial-gradient(circle at top right, rgba(255,77,0,0.08) 0%, transparent 60%);"
     ></div>
 
     <div class="section section-inner relative z-10">
@@ -183,7 +183,7 @@ const afterItems = [
         {processSteps.map((step) => (
           <div class="reveal-stagger text-center p-6 md:p-8">
             <span
-              class="block text-4xl font-bold mb-4 text-[var(--color-teal)]"
+              class="block text-4xl font-bold mb-4 text-[var(--color-accent)]"
               style="font-family: var(--font-heading);"
             >
               {step.num}
@@ -205,12 +205,12 @@ const afterItems = [
   </section>
 
   {/* Who This Is For */}
-  <section class="bg-white">
+  <section class="bg-[var(--color-dark)]">
     <div class="section section-inner">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         <div class="reveal">
           <p class="eyebrow mb-4">Is This for You?</p>
-          <h2 class="mb-6" style="font-size: clamp(28px, 3.5vw, 40px); font-weight: 700;">
+          <h2 class="mb-6 text-[var(--color-text-bright)]" style="font-size: clamp(28px, 3.5vw, 40px); font-weight: 700;">
             Built for businesses that know AI matters — but don't know where to start.
           </h2>
           <p class="text-[var(--color-text-light)] text-lg leading-relaxed mb-8">
@@ -219,7 +219,7 @@ const afterItems = [
           <ul class="space-y-4">
             {checklist.map((item) => (
               <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 mt-0.5 flex-shrink-0 text-[var(--color-teal)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 mt-0.5 flex-shrink-0 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                 </svg>
                 <span class="text-[var(--color-text)] leading-relaxed">{item}</span>
@@ -229,14 +229,14 @@ const afterItems = [
         </div>
 
         <div class="reveal" style="transition-delay: 0.15s;">
-          <div class="rounded-xl p-8 md:p-10 border border-gray-200" style="background: var(--color-warm-white);">
-            <h3 class="text-lg font-bold text-[var(--color-dark)] mb-6" style="font-family: var(--font-heading);">
+          <div class="rounded-xl p-8 md:p-10 border border-[var(--color-border)]" style="background: var(--color-surface-card);">
+            <h3 class="text-lg font-bold text-[var(--color-text-bright)] mb-6" style="font-family: var(--font-heading);">
               After AI Integration:
             </h3>
             <ul class="space-y-4">
               {afterItems.map((item) => (
                 <li class="flex items-start gap-3">
-                  <svg class="w-4 h-4 mt-1.5 flex-shrink-0 text-[var(--color-teal)]" fill="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 mt-1.5 flex-shrink-0 text-[var(--color-accent)]" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M10 17l5-5-5-5v10z" />
                   </svg>
                   <span class="text-[15px] text-[var(--color-text)] leading-relaxed">{item}</span>
@@ -281,7 +281,7 @@ const afterItems = [
         if (!isOpen) {
           content.classList.add('open');
           icon.classList.add('open');
-          if (title) title.style.color = 'var(--color-teal)';
+          if (title) title.style.color = 'var(--color-accent)';
           trigger.setAttribute('aria-expanded', 'true');
         }
       });

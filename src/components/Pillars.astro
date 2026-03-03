@@ -19,12 +19,12 @@ const pillars = [
 ];
 ---
 
-<section class="bg-white">
+<section class="bg-[var(--color-dark)]">
   <div class="section section-inner">
     <div class="text-center max-w-[700px] mx-auto mb-16 md:mb-20">
       <p class="eyebrow mb-4 reveal">What We Do</p>
       <h2
-        class="reveal"
+        class="reveal text-[var(--color-text-bright)]"
         style="font-size: clamp(30px, 3.5vw, 44px); font-weight: 700; transition-delay: 0.1s;"
       >
         We don't advise from the sideline. We get inside and rebuild.
@@ -34,24 +34,24 @@ const pillars = [
     <div class="grid md:grid-cols-3 gap-8" data-stagger>
       {pillars.map((pillar) => (
         <div
-          class="reveal-stagger group relative bg-white rounded-xl p-8 md:p-10 border border-gray-200 transition-all duration-300 hover:-translate-y-1.5 cursor-default"
-          style="box-shadow: 0 1px 3px rgba(0,0,0,0.04);"
-          onmouseenter="this.style.borderColor='var(--color-teal)';this.style.boxShadow='0 12px 40px rgba(0,0,0,0.08)'"
-          onmouseleave="this.style.borderColor='#E5E7EB';this.style.boxShadow='0 1px 3px rgba(0,0,0,0.04)'"
+          class="reveal-stagger group relative bg-[var(--color-surface-card)] rounded-xl p-8 md:p-10 border border-[var(--color-border)] transition-all duration-300 hover:-translate-y-1.5 cursor-default"
+          style="box-shadow: 0 1px 3px rgba(0,0,0,0.2);"
+          onmouseenter="this.style.borderColor='var(--color-accent)';this.style.boxShadow='0 12px 40px rgba(0,0,0,0.3)'"
+          onmouseleave="this.style.borderColor='rgba(255,255,255,0.08)';this.style.boxShadow='0 1px 3px rgba(0,0,0,0.2)'"
         >
-          {/* Teal top bar */}
+          {/* Accent top bar */}
           <div
-            class="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl bg-[var(--color-teal)] origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
+            class="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl bg-[var(--color-accent)] origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
           ></div>
 
           <span
             class="block text-5xl font-bold mb-6 select-none"
-            style="font-family: var(--font-heading); color: rgba(26,26,46,0.06);"
+            style="font-family: var(--font-heading); color: rgba(255,255,255,0.04);"
           >
             {pillar.number}
           </span>
 
-          <h3 class="text-xl font-bold text-[var(--color-dark)] mb-4" style="font-family: var(--font-heading);">
+          <h3 class="text-xl font-bold text-[var(--color-text-bright)] mb-4" style="font-family: var(--font-heading);">
             {pillar.title}
           </h3>
 
@@ -62,7 +62,7 @@ const pillars = [
           {pillar.link && (
             <a
               href={pillar.link.href}
-              class="inline-block text-sm font-semibold text-[var(--color-teal)] hover:text-[var(--color-teal-light)] transition-colors duration-200 mt-2"
+              class="inline-block text-sm font-semibold text-[var(--color-accent)] hover:text-[var(--color-accent-light)] transition-colors duration-200 mt-2"
             >
               {pillar.link.label}
             </a>

@@ -25,19 +25,19 @@ const founders = [
   description="L&B was built by operators, not academics. Meet the team behind the business modernization firm helping $1M–$20M companies scale."
 >
   {/* Hero */}
-  <section class="bg-white">
+  <section>
     <div class="section section-inner py-20 md:py-28 lg:py-32">
       <div class="max-w-[800px]">
         <p class="eyebrow mb-6 hero-eyebrow">
           <span class="accent-dot">About Us</span>
         </p>
         <h1
-          class="mb-6 hero-headline-line"
+          class="mb-6 hero-headline-line text-[var(--color-text-bright)]"
           style="font-size: clamp(36px, 4.5vw, 56px); font-weight: 700; line-height: 1.1;"
         >
           <span>We've Sat Where You Sit.</span>
         </h1>
-        <p class="hero-sub text-lg md:text-xl max-w-[640px]" style="color: var(--color-text-light); line-height: 1.7;">
+        <p class="hero-sub text-lg md:text-xl max-w-[640px]" style="color: var(--color-text); line-height: 1.7;">
           L&B was built by operators, not academics. We started this firm because we saw too many businesses stuck—great people trapped inside broken systems.
         </p>
       </div>
@@ -45,7 +45,7 @@ const founders = [
   </section>
 
   {/* Founder Bios */}
-  <section class="bg-[var(--color-warm-white)] relative noise-overlay-light">
+  <section class="bg-[var(--color-surface)] relative noise-overlay">
     <div class="section section-inner relative z-10">
       <div class="space-y-20 md:space-y-28">
         {founders.map((founder, i) => (
@@ -68,7 +68,7 @@ const founders = [
                 />
                 <div
                   class="hidden aspect-[4/5] rounded-2xl items-center justify-center"
-                  style="background: linear-gradient(135deg, #E5E7EB 0%, #D1D5DB 100%);"
+                  style="background: linear-gradient(135deg, #1A1A24 0%, #15151E 100%);"
                 >
                   <span
                     class="text-5xl font-bold text-white/60"
@@ -84,7 +84,7 @@ const founders = [
             <div class={i % 2 === 1 ? "md:[direction:ltr]" : ""}>
               <p class="eyebrow mb-3">{founder.title}</p>
               <h2
-                class="mb-6"
+                class="mb-6 text-[var(--color-text-bright)]"
                 style="font-size: clamp(28px, 3vw, 36px); font-weight: 700;"
               >
                 {founder.name}
@@ -100,12 +100,12 @@ const founders = [
   </section>
 
   {/* Our Approach */}
-  <section class="bg-white">
+  <section class="bg-[var(--color-dark)]">
     <div class="section section-inner">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         <div class="reveal">
           <h2
-            class="mb-6"
+            class="mb-6 text-[var(--color-text-bright)]"
             style="font-size: clamp(30px, 3.5vw, 44px); font-weight: 700;"
           >
             Most consulting gets it backward.
@@ -118,7 +118,7 @@ const founders = [
           <p class="text-lg leading-relaxed text-[var(--color-text-light)] mb-6">
             We integrate AI where it creates real leverage — not as a buzzword, but as embedded tools your team actually uses. We don't hand you a report and wish you luck.
           </p>
-          <p class="text-lg leading-relaxed text-[var(--color-text)]  font-medium">
+          <p class="text-lg leading-relaxed text-[var(--color-text)] font-medium">
             We implement the changes, train your team, manage your AI systems, and stay until the new way of working holds. That's the difference between advice and transformation.
           </p>
         </div>
